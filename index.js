@@ -10,6 +10,8 @@ let walk_length = 100;
 let count = 0;
 let simulation_running = false;
 
+let timer = null;
+
 Array.prototype.last = function(){
     return this[this.length - 1]
 }
@@ -58,13 +60,16 @@ function simulate(){
 
 function create_event_listeners(){
     d3.select('#move').on('click', function(){
-        simulation_running = true;
-        step();
+        if(simulation_running == false){
+            simulation_running = true;
+            timer = d3.timer(step);
+        }
     })
 
     d3.select('#clear').on('click', function(){
+        timer.stop();
         simulation_running = false;
-        setTimeout( function(){ update(); }, 100 )
+        update();
     })
 }
 
@@ -76,8 +81,7 @@ function create_event_listeners(){
 function step(){
     simulate();
     count++;
-    if(count < walk_length & simulation_running){ window.requestAnimationFrame(step); }
-    else{ count = 0; }
+    if(count >= walk_length){ timer.stop(); simulation_running = false; count = 0; }
 }
 
 /************************************************************/

@@ -1,2 +1,0 @@
-- Use d3.timer
-- reset()
