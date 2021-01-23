@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>Random Walk</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -29,7 +29,18 @@
     <link rel="stylesheet" href="./stylesheet.css">
 </head>
 
-<body></body>
+<body>
+    <div class="container-fluid">
+        <div class="text-center pt-2"> <h3>Random Walk</h3> </div>
+        <div class="text-center">
+            <svg width=600 height=600 id="canvas"></svg>
+        </div>
+        <div class="text-center">
+            <button id='move' class='btn btn-primary'>Move 100 steps</button>
+            <button id='clear' class='btn btn-primary'>Clear</button>
+        </div>
+    </div>
+</body>
 
 <script src="./logic.js"></script>
 <script src="./visual.js"></script>

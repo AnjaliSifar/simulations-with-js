@@ -1,27 +1,34 @@
 /************************************************************/
 /**
-    Logic class
+    Random_Walker class
 */
 
-function Logic(){}
+function Random_Walker(){
+    this.directions = [ [0,1], [1,0], [0,-1], [-1,0] ];
+}
 
 /************************************************************/
 /**
-    Logic class - setup()
+    Random_Walker class - setup()
 */
 
-Logic.prototype.setup = function(){}
+Random_Walker.prototype.setup = function(){}
 
 /************************************************************/
 /**
-    Logic class - update()
+    Random_Walker class - update()
 */
 
-Logic.prototype.update = function(){}
+Random_Walker.prototype.update = function(){
+    this.path = [];
+}
 
 /************************************************************/
 /**
-    Logic class - simulate()
+    Random_Walker class - simulate()
 */
 
-Logic.prototype.simulate = function(){}
+Random_Walker.prototype.simulate = function(){
+    let direction_to_move = this.directions[ math.randomInt(4) ];
+    this.path.push(direction_to_move);
+}
