@@ -5,12 +5,38 @@
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
+    
+    
+    <!-- viewport = user's visible area. 
+    this tag below, is to make the website look good on all devices.
+    more about viewport in "responsive web page designing"
+
+    The width=device-width part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).
+
+    The initial-scale=1.0 part sets the initial zoom level when the page is first loaded by the browser.
+    -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <!-- D3 and D3 Multi -->
+    <!-- D3 and D3 Multi
+    D3 allows you to bind arbitrary data to a Document Object Model (DOM), and then apply data-driven transformations to the document.
+    for efficient manipulation of documents based on data. 
+
+    1. Selections - using d3 to select doms and apply style or provide content
+    2. 
+
+    D3 lets you transform documents based on data; 
+    this includes both creating and destroying elements. 
+    D3 allows you to change an existing document in response to user interaction, 
+    animation over time, or even asynchronous notification from a third-party.
+    A hybrid approach is even possible, where the document is initially rendered on the server, 
+    and updated on the client via D3
+
+
+-->
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>    
 
@@ -30,13 +56,15 @@
 </head>
 
 <body>
+
+    <!-- how are we getting the names of these classes? -->
     <div class="container-fluid">
         <div class="text-center pt-2"> <h3>Random Walk</h3> </div>
         <div class="text-center">
-            <svg width=600 height=600 id="canvas"></svg>
+            <svg width=20% height=20% id="canvas"></svg>
         </div>
         <div class="text-center">
-            <button id='move' class='btn btn-primary'>Move 100 steps</button>
+            <button id='move' class='btn btn-primary' width = 1%>Move 100 steps</button>
             <button id='clear' class='btn btn-primary'>Clear</button>
         </div>
     </div>

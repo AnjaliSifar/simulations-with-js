@@ -6,7 +6,7 @@
 let random_walker = null;
 let visual = null;
 
-let walk_length = 100;
+let walk_length = 5;
 let count = 0;
 let simulation_running = false;
 
@@ -25,7 +25,12 @@ Array.prototype.last = function(){
 
 function setup(){
     random_walker = new Random_Walker();
+    console.log("random walker initialised",random_walker)
+    console.log("directions of random walker",random_walker.directions)
     visual = new Visual('canvas');
+
+    console.log("visual initialised",visual)
+    
 
     random_walker.setup();
     visual.setup(random_walker);
@@ -62,6 +67,8 @@ function create_event_listeners(){
     d3.select('#move').on('click', function(){
         if(simulation_running == false){
             simulation_running = true;
+// this "step " is a callback function to be passed into the timer API,
+// such that the timer invokes it repeatedly until the timer is stopped. 
             timer = d3.timer(step);
         }
     })
