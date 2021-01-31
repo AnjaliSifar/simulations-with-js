@@ -5,6 +5,7 @@
 
 function Visual(svg_id){
     this.svg = d3.select('#'+svg_id);
+    console.log("anjali")
 }
 
 /************************************************************/
