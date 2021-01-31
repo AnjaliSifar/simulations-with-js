@@ -17,7 +17,7 @@ Visual.prototype.setup = function(random_walker){
 
     this.svg.attrs({ 'viewBox': '0 0 100 100' });
     // what is this transform attribute used for .. and how it is used?
-    this.origin = this.svg.append('g').attrs({ 'transform': 'translate(50,50)' });
+    this.origin = this.svg.append('g').attrs({ 'transform': 'translate(0,100)' });
     this.path = this.origin.append('g');
     this.walker = this.origin.append('circle').attrs({ 'r': 0.8 }).styles({ 'fill': 'white', 'stroke': 'orange', 'stroke-width': 0.6 });
 }
@@ -42,7 +42,7 @@ Visual.prototype.update = function(){
 
 Visual.prototype.simulate = function(){
     let direction = this.random_walker.path.last();
-    // why the direction values have been multiplied by 2.. ?
+// just a pixel movement. 1 pixel is not enuf for viewing properly, that the directions is multiplied by 2.
     let new_cx = this.cx + 2*direction[0];
     let new_cy = this.cy + 2*direction[1];
 
